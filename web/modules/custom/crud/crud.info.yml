@@ -1,0 +1,5 @@
+name: crud
+type: module
+description: Mi primer módulo custom
+package: custom
+core_version_requirement: ^8.8 || ^9 || ^10

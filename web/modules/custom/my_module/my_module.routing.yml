@@ -1,0 +1,49 @@
+my_module.example_route:
+  path: '/example-route'
+  defaults:
+    _controller: '\Drupal\my_module\Controller\ExampleController::example'
+    _title: 'Example'
+  requirements:
+    _permission: 'access content'
+
+
+
+my_module.servicios:
+  path: '/servicios'
+  defaults:
+    _controller: '\Drupal\my_module\Controller\DbController::servicios'
+    _title: 'Servicios'
+  requirements:
+    _permission: 'access content'
+
+
+my_module.servicios_obtener:
+  path: '/servicios/{id}'
+  defaults:
+    _controller: '\Drupal\my_module\Controller\DbController::getServicioById'
+    _title: 'Detalles'
+  requirements:
+    _permission: 'access content'
+
+my_module.servicio_actualizar:
+  path: '/servicios/{id}/actualizar'
+  defaults:
+    _controller: '\Drupal\my_module\Controller\DbController::actualizarServicio'
+    _title: 'Actualizar'
+  requirements:
+    _permission: 'access content'
+
+my_module.servicios_eliminar:
+  path: '/servicios/{id}/eliminar'
+  defaults:
+    _controller: '\Drupal\my_module\Controller\DbController::eliminarServicio'
+    _title: 'Eliminar'
+  requirements:
+    _permission: 'administer site configuration'
+
+my_module.formulario:
+  path: '/formulario'
+  defaults:
+    _form: '\Drupal\my_module\Form\MyModuleForm'
+  requirements:
+    _permission: 'access content'
