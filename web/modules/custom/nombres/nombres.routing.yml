@@ -1,0 +1,8 @@
+#nombre.list:
+#  path: '/nombres'
+#  defaults:
+#    _controller: '\Drupal\peliculas\Controller\PeliculasController::listar'
+#    _title: 'Lista de nombres'
+#  requirements:
+#    _permission: 'access content'
+
