@@ -1,0 +1,5 @@
+name: Controlador de animes
+type: module
+description: 'Este modulo custon me ayuda con la gestion de los animes creados'
+package: Custom
+core_version_requirement: ^8.8 || ^9 || ^10

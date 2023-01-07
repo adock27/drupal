@@ -1,0 +1,31 @@
+peliculas.list:
+  path: '/peliculas'
+  defaults:
+    _controller: '\Drupal\peliculas\Controller\PeliculasController::listar'
+    _title: 'Lista de películas'
+  requirements:
+    _permission: 'access content'
+
+peliculas.add:
+  path: '/peliculas/agregar'
+  defaults:
+    _controller: '\Drupal\peliculas\Controller\PeliculasController::agregar'
+    _title: 'Agregar película'
+  requirements:
+    _permission: 'access content'
+
+peliculas.edit:
+  path: '/peliculas/editar/{peliculas_id}'
+  defaults:
+    _controller: '\Drupal\peliculas\Controller\PeliculasController::editar'
+    _title: 'Editar película'
+  requirements:
+    _permission: 'access content'
+
+peliculas.delete:
+  path: '/peliculas/eliminar/{pelicula_id}'
+  defaults:
+    _controller: '\Drupal\peliculas\Controller\PeliculasController::eliminar'
+    _title: 'Eliminar película'
+  requirements:
+    _permission: 'access content'

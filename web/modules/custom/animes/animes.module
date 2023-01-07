@@ -1,0 +1,20 @@
+<?php
+
+
+function animes_node_update(\Drupal\node\NodeInterface $node) {
+
+if($node->getType() == 'anime'){
+  dpm($node->getType());
+  \Drupal::messenger()->addMessage('Anime');
+
+  $query = \Drupal::entityTypeManager()->getStorage('node')->getQuery();
+  $query->condition('type','page','<>');
+  $result = $query->execute();
+
+//  $nodes = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($result);
+//  dpm($nodes, 'nodes');
+
+}
+}
+
+

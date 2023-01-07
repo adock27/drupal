@@ -1,0 +1,4 @@
+name: Películas
+description: Un módulo para gestionar una lista de películas.
+type: module
+core_version_requirement: ^8.8 || ^9 || ^10

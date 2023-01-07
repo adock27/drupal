@@ -3,13 +3,18 @@
 /**
  * Implements hook_theme().
  */
-function my_module_theme($existing, $type, $theme, $path) {
+function nombres_theme($existing, $type, $theme, $path) {
   return [
-    'plantilla_servicios' => [
+    'listar_nombres' => [
       'variables' => [
         'data' => NULL,
         'form' => NULL,
       ],
+      'template' => 'listar-nombres',
+    ],
+    'ver_nombres' => [
+      'variables' => ['data' => []],
+      'template' => 'ver-nombres',
     ],
   ];
 }

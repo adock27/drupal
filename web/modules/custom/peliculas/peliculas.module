@@ -1,0 +1,56 @@
+<?php
+
+/**
+ * @file
+ * Módulo de ejemplo para gestionar una lista de películas.
+ */
+
+/**
+ * Implementa hook_permission().
+ */
+function peliculas_permission() {
+  return [
+    'administer movies' => [
+      'title' => t('Administer movies'),
+      'description' => t('Perform administration tasks for movies.'),
+    ],
+  ];
+}
+
+/**
+ * Implementa hook_menu_local_tasks().
+ */
+function peliculas_menu_local_tasks(&$data) {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if ($route_name == 'peliculas.list') {
+    $data['tabs'][0]['peliculas.add'] = [
+      'title' => t('Add movie'),
+      'route_name' => 'peliculas.add',
+      'weight' => 10,
+    ];
+  }
+  elseif ($route_name == 'peliculas.edit') {
+    $data['tabs'][0]['peliculas.list'] = [
+      'title' => t('List movies'),
+      'route_name' => 'peliculas.list',
+      'weight' => -10,
+    ];
+  }
+}
+
+/**
+ * Implementa hook_theme().
+ */
+function peliculas_theme($existing, $type, $theme, $path) {
+  return [
+    'peliculas_formulario' => [
+      'variables' => ['pelicula' => NULL],
+      'template' => 'peliculas-formulario',
+    ],
+    'peliculas_lista' => [
+      'variables' => ['peliculas' => []],
+      'template' => 'peliculas-lista',
+    ],
+  ];
+}
+

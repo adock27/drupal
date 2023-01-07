@@ -1,0 +1,47 @@
+<?php
+
+use Drupal\Core\Database\Database;
+
+function peliculas_install() {
+  // Crea la tabla de películas.
+  $schema = Database::getConnection()->schema();
+  $schema->createTable('peliculas', [
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'titulo' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'ano' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'duracion' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'genero' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'sinopsis' => [
+        'type' => 'text',
+        'not null' => TRUE,
+      ],
+      'poster' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['id'],
+  ]);
+}

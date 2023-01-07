@@ -1,0 +1,19 @@
+{% set accion = pelicula is null ? 'Agregar' : 'Editar' %}
+{% set ruta = pelicula is null ? '/peliculas/agregar' : '/peliculas/editar/' ~ pelicula.id %}
+
+<h1>{{ accion }} película</h1>
+
+<form action="{{ ruta }}" method="post">
+  <div>
+    <label for="titulo">Título:</label>
+    <input type="text" name="titulo" value="{{ pelicula is not null ? pelicula.titulo : '' }}">
+  </div>
+  <div>
+    <label for="ano">Año:</label>
+    <input type="number" name="ano" value="{{ pelicula is not null ? pelicula.ano : '' }}">
+  </div>
+  <div>
+    <label for="duracion">Duración:</label>
+    <input type="number" name="duracion" value="{{ pelicula is not null ? pelicula.duracion : '' }}">
+  </div>
+

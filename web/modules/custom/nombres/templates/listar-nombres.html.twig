@@ -23,24 +23,27 @@
       </thead>
       <tbody>
 
+
+
       {% for key, item in data %}
+
         <tr>
           <th scope="row">
             {{ item.id }}
 
           </th>
           <td>
-            <a href="/servicios/{{ item.id }}">
+            <a href="/nombres/{{ item.id }}">
               {{ item.nombre }}
             </a>
           </td>
           <td>
-            <a href="/servicios/{{ item.id }}/actualizar">
+            <a href="/nombres/{{ item.id }}/editar">
               Editar
             </a>
           </td>
           <td>
-            <a href="/servicios/{{ item.id }}/eliminar">
+            <a href="/nombres/{{ item.id }}/eliminar">
               Eliminar
             </a>
           </td>
