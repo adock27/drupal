@@ -5,3 +5,6 @@
 /web/sites/default/files/js
 /web/sites/default/files/languages
 /vendor
+/web/sites/*/translations
+/web/sites/*/tmp
+/web/sites/*/cache
